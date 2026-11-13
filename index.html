@@ -47,6 +47,28 @@ html,body{margin:0;height:100%;background:#EAF1FF}
 })();
 </script>
 <script>
+/* Tombol "Instal Aplikasi" di dalam aplikasi meminta pemasangan lewat halaman ini */
+(function () {
+  var dp = null, installed = false;
+  var ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  var stand = function () { return (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true; };
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); dp = e; });
+  window.addEventListener('appinstalled', function () { installed = true; dp = null; });
+  window.addEventListener('message', function (e) {
+    var d = e.data; if (!d || d.st !== 'install') return;
+    var host = ''; try { host = new URL(e.origin).hostname; } catch (x) { return; }
+    if (!/(^|\.)google(usercontent)?\.com$/.test(host)) return;
+    function rep(r) { try { e.source.postMessage({ st: 'install-res', r: r }, '*'); } catch (x) { } }
+    if (installed || stand()) { rep('installed'); return; }
+    if (!dp) { rep(ios ? 'ios' : 'manual'); return; }
+    try {
+      var ev = dp; dp = null; ev.prompt();
+      ev.userChoice.then(function (c) { rep(c.outcome === 'accepted' ? 'accepted' : 'dismissed'); }, function () { rep('manual'); });
+    } catch (x) { rep('manual'); }
+  });
+})();
+</script>
+<script>
 if ('serviceWorker' in navigator && /^https:|^http:\/\/localhost/.test(location.protocol + '//' + location.hostname)) {
   window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () { }); });
 }
