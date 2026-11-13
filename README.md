@@ -1,7 +1,7 @@
 # Surat Tugas Req Material
 
-Halaman pintu masuk aplikasi (GitHub Pages) untuk web app Apps Script **Surat Tugas Req Material** — Proyek Starlite.
-Halaman ini hanya meneruskan pengunjung ke aplikasi, sehingga **tiap deploy versi baru di Apps Script otomatis tampil** tanpa mengubah GitHub.
+Halaman GitHub Pages untuk web app Apps Script **Surat Tugas Req Material** — Proyek Starlite.
+Aplikasi ditampilkan di dalam halaman ini (alamat tetap `github.io`, tidak pindah ke `script.google.com`), sehingga **tiap deploy versi baru di Apps Script otomatis tampil** tanpa mengubah GitHub.
 
 ## Pasang (sekali saja)
 1. GitHub → **New repository** → nama bebas (mis. `surat-tugas`) → Public → Create.
@@ -18,6 +18,6 @@ Halaman ini hanya meneruskan pengunjung ke aplikasi, sehingga **tiap deploy vers
 
 ## Catatan
 - Akses web app harus **Jalankan sebagai: Saya** dan **Siapa yang memiliki akses: Siapa saja**.
-- Parameter pada alamat diteruskan, mis. `.../surat-tugas/?page=ttd&k=...` dibuka sebagai link TTD.
-- Tambahkan `?stay=1` bila halaman tidak boleh mengalihkan otomatis.
+- Link TTD yang dibuat sistem sudah memakai alamat GitHub (`WEB_URL` di Code.gs), mis. `.../ST_Material/?page=ttd&k=...`.
+- Bila perlu membuka tanpa bingkai (cadangan), tambahkan `?direct=1` pada alamat.
 - Link aplikasi hanya ada di `config.js`.
