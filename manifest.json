@@ -1,0 +1,17 @@
+{
+  "name": "Surat Tugas Req Material",
+  "short_name": "Surat Tugas",
+  "description": "Permintaan dan penerbitan Surat Tugas Req Material - Proyek Starlite, PT Integrasi Jaringan Ekosistem",
+  "lang": "id",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#EAF1FF",
+  "theme_color": "#EAF1FF",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
