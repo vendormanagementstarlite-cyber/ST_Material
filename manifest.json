@@ -1,0 +1,17 @@
+{
+  "name": "Form Request Pengambilan Material",
+  "short_name": "Form Request",
+  "description": "Form Request Pengambilan Material, Data Unit & Reimbursement - Proyek Starlite, PT Integrasi Jaringan Ekosistem",
+  "lang": "id",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#EAF1FF",
+  "theme_color": "#EAF1FF",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
